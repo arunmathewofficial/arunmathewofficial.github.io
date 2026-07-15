@@ -16,7 +16,7 @@ nothing to run by hand to publish — commit and push, and GitHub Pages does the
 - [Where everything lives](#where-everything-lives)
 - [Site-wide settings](#site-wide-settings)
 - [Navigation tabs](#navigation-tabs)
-- [Editing the pages](#editing-the-pages-home-research-cv)
+- [Editing the pages](#editing-the-pages-home-research)
 - [Publications](#publications)
 - [Talks](#talks)
 - [Teaching](#teaching)
@@ -24,7 +24,7 @@ nothing to run by hand to publish — commit and push, and GitHub Pages does the
 - [Images](#images)
 - [Videos](#videos)
 - [Maths](#maths)
-- [The CV PDF](#the-cv-pdf)
+- [The CV](#the-cv)
 - [Tooling](#tooling)
 
 ---
@@ -52,13 +52,13 @@ Then open <http://localhost:4000>. Pages rebuild as you save, **except**
 | `_data/navigation.yml` | The tabs across the top |
 | `_pages/about.md` | The home page |
 | `_pages/research.md` | Research page |
-| `_pages/cv.md` | CV page |
+| `_pages/cv.md` | CV page — embeds `files/cv.pdf`, no text of its own |
 | `_publications/` | One file per paper |
 | `_talks/` | One file per talk |
 | `_teaching/` | One file per teaching role |
 | `_posts/` | Blog posts |
 | `images/` | Images and your profile photo |
-| `files/` | PDFs and other downloads |
+| `files/cv.pdf` | Your CV — the CV page shows this file |
 
 Every content file starts with a **front matter** block — the bit fenced by `---`
 lines at the top. That is metadata (title, date, venue), not page text. The page
@@ -124,7 +124,7 @@ reachable by URL. To remove a page entirely, delete its file in `_pages/`.
 
 ---
 
-## Editing the pages (Home, Research, CV)
+## Editing the pages (Home, Research)
 
 These are ordinary Markdown files in `_pages/`. Edit the text below the front
 matter and push.
@@ -200,9 +200,10 @@ and add their own download links.
 Editing is just editing the file. To remove a paper, delete its file — nothing
 else references it.
 
-**Anything you add flows to the CV page automatically.** The Publications, Talks
-and Teaching sections of `_pages/cv.md` are generated from these collections, so
-you never add a paper in two places.
+**These collections do not feed the CV page** — that page is only the PDF (see
+[The CV](#the-cv)). A new paper shows up on `/publications/` straight away, but
+your CV PDF is a separate document: to have it listed there too, update your
+CV and [replace the PDF](#replacing-it-with-a-newer-cv).
 
 ---
 
@@ -422,14 +423,59 @@ centred display equation.
 
 ---
 
-## The CV PDF
+## The CV
 
-`_pages/cv.md` is the CV as a web page. The **Download CV as PDF** button on it
-points at `files/cv.pdf`.
+The CV page is **just the PDF**. `_pages/cv.md` holds no CV text of its own — it
+embeds `files/cv.pdf` in a viewer and offers a download link underneath. The
+whole page is these two lines:
 
-That button is guarded: it only renders if `files/cv.pdf` actually exists, so
-replacing the PDF is just replacing the file, and removing it hides the button
-rather than leaving a dead link. The filename must be exactly `files/cv.pdf`.
+```html
+<iframe src="/files/cv.pdf" width="100%" height="800" frameborder="no" border="0" marginwidth="0" marginheight="0"></iframe>
+
+You can download a PDF copy of my CV [here](/files/cv.pdf).
+```
+
+So the PDF *is* the CV. There is no second copy to keep in sync.
+
+### Replacing it with a newer CV
+
+**Overwrite `files/cv.pdf` and push. That is the whole job** — the page picks up
+the new file automatically, and nothing else needs editing:
+
+```sh
+cp /path/to/your/new-cv.pdf files/cv.pdf
+git add files/cv.pdf
+git commit -m "Update CV"
+git push
+```
+
+The page updates within a minute or two of the push.
+
+**The filename must stay exactly `files/cv.pdf`.** That path is hardcoded in
+`_pages/cv.md` in two places, the iframe and the download link. If you want to
+keep a dated name like `cv-2026-03.pdf`, you have to edit both lines to match,
+so overwriting the same filename is the easier path.
+
+A few practical notes:
+
+- **Hard-refresh to see the change.** Browsers cache PDFs aggressively, so your
+  old CV may persist on screen after a successful deploy. Use Ctrl+Shift+R
+  (Cmd+Shift+R on a Mac), or open the URL in a private window, before concluding
+  something is broken.
+- **Every version stays in Git history**, since the PDF is committed. Replacing
+  the file removes it from the live site but not from the repository's past.
+- **The viewer does not work everywhere.** Embedded PDFs are unreliable on
+  phones — iOS Safari and some Android browsers show a blank box or only the
+  first page. That is why the download link below the viewer matters; it is the
+  fallback for every visitor the iframe fails. Do not remove it.
+- **Keep the file reasonably small.** Under a few MB loads promptly in the
+  embedded viewer.
+
+### Changing the viewer height
+
+`height="800"` in `_pages/cv.md` is the viewer's height in pixels. Raise it to
+show more of a page at once; `height="90vh"` instead makes it 90% of the
+browser window's height.
 
 ---
 
