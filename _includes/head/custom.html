@@ -2,6 +2,13 @@
 
 <!-- start custom head snippets -->
 
+<!-- Fallback social preview image. seo.html only emits og:image from
+     page.header.image, which no page here sets, so links shared to Slack,
+     LinkedIn etc. would otherwise preview with no image. -->
+{% unless page.header.image or page.header.overlay_image %}
+<meta property="og:image" content="{{ '/images/profile.jpeg' | absolute_url }}">
+{% endunless %}
+
 <!-- Support for Academicons -->
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"></noscript>

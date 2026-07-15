@@ -12,7 +12,7 @@ site_theme               : "default" # The available themes options are "default
 title                    : "Arun Mathew"
 title_separator          : "-"
 name                     : &name "Arun Mathew"
-description              : &description "Arun Mathew — Dublin Institute for Advanced Studies (DIAS)"   # Update this with a general description of your site, this is the default if not overridden by a page
+description              : &description "Arun Mathew — computational astrophysicist at DIAS. Non-equilibrium plasma, radiation-MHD and stellar wind bow shocks. Developer of NEMO and NebulaPy."   # Shown by Google under the page title. Keep under ~155 characters or it gets truncated.
 url                      : https://arunmathewofficial.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -130,8 +130,12 @@ atom_feed:
 
 
 # SEO Related
+# To verify with Google Search Console: https://search.google.com/search-console
+# add this site as a URL-prefix property, choose the "HTML tag" method, and paste
+# just the content="..." value below (not the whole tag). Verifying is what lets
+# you submit the sitemap, which is how Google actually finds a new site.
 google_site_verification :
-bing_site_verification   :
+bing_site_verification   :   # https://www.bing.com/webmasters
 alexa_site_verification  :
 yandex_site_verification :
 
@@ -147,10 +151,16 @@ og_image                 :  # Social media default site image
 og_description           :  # Social media default site image description
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
+# These become the schema.org "sameAs" list, which is how Google ties this site
+# to the same person behind the Scholar/ORCID/GitHub profiles. Leaving links
+# empty emits "sameAs": null, which tells Google nothing.
 social:
-  type                   : # Person or Organization (defaults to Person)
-  name                   : # If the user or organization name differs from the site's name
-  links: # An array of links to social media profiles
+  type                   : Person
+  name                   : "Arun Mathew"
+  links:
+    - "https://scholar.google.com/citations?user=i8F73fwAAAAJ&hl=en"
+    - "https://orcid.org/0000-0001-9896-4243"
+    - "https://github.com/arunmathewofficial"
 
 
 # Analytics
