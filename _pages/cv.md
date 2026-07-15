@@ -9,6 +9,15 @@ redirect_from:
 
 {% include base_path %}
 
+{% comment %}
+  Renders only once files/cv.pdf exists, so no broken link ships before then.
+  Drop the PDF at files/cv.pdf and the button appears by itself.
+{% endcomment %}
+{% assign cv_pdf = site.static_files | where: "path", "/files/cv.pdf" | first %}
+{% if cv_pdf %}
+<p><a href="{{ base_path }}/files/cv.pdf" class="btn btn--primary">Download CV as PDF</a></p>
+{% endif %}
+
 Professional summary
 ======
 Theoretical and computational astrophysicist with over ten years of research experience across non-equilibrium plasma astrophysics, radiation–magnetohydrodynamics (MHD), general relativity, cosmology, and higher-order gravity. My work spans the modelling of ionised plasmas in stellar and high-energy astrophysical environments, with a focus on connecting fundamental microphysics to observable phenomena, as well as studies of extended gravity in compact objects and early-Universe physics, including inflation and reheating.
