@@ -30,7 +30,7 @@ author:
   location         : "Dublin, Ireland"
   employer         : "Dublin Institute for Advanced Studies (DIAS)"
   uri              : # URL
-  email            : "arun@cp.dias.ie"
+  email            : "tonykochumalil@gmail.com"
 
   # Academic websites
   academia         : # URL
@@ -84,12 +84,12 @@ author:
 
 # Publication Category - The following the list of publication categories and their headings
 publication_category:
-  books:
-    title: 'Books'
   manuscripts:
-    title: 'Journal Articles'    
+    title: 'Journal Articles'
   conferences:
-    title: 'Conference Papers'
+    title: 'Conference Proceedings'
+  forthcoming:
+    title: 'Forthcoming, Under Review, and In Preparation'
 
 # Site Settings
 teaser                   :  # filename of teaser fallback teaser image placed in /images/ for social media previews
