@@ -100,7 +100,6 @@ Scholar profile" line to the Publications page.
 **Other switches worth knowing:**
 
 ```yaml
-talkmap_link : false   # true adds a link to the talk map from the Talks page
 breadcrumbs  : false   # true shows a breadcrumb trail on pages
 read_more    : "disabled"
 ```
@@ -228,10 +227,7 @@ Free text about the talk. Optional.
 `type:` is free text and shows on the page — currently in use: `Invited talk`,
 `Seminar`, `Public lecture`, `Outreach talk`.
 
-**`location:` matters more than it looks.** A workflow geocodes it into a world
-map at `/talkmap.html` on every push that touches `_talks/`. Keep it in
-`City, Country` form so it can be found. The map is not linked from anywhere
-until you set `talkmap_link: true` in `_config.yml`.
+`location:` is displayed with the talk. `City, Country` is the usual form.
 
 ---
 
@@ -487,11 +483,8 @@ export into publication entries in bulk, rather than writing each by hand.
 worked examples of the input format. Check the generated files before committing
 — the output usually needs a little tidying.
 
-**`talkmap.ipynb`** — reads the `location:` field of every file in `_talks/`,
-geocodes it, and writes `talkmap/org-locations.js`, which draws the map at
-`/talkmap.html`. `.github/workflows/scrape_talks.yml` runs this automatically on
-any push touching `_talks/` and commits the result, so **after adding a talk,
-`git pull` before your next change** — the bot will have pushed a commit.
+It is excluded from the built site in `_config.yml`, so it is not published as
+a public URL.
 
-Both are excluded from the built site in `_config.yml`, so they are not
-published as public URLs.
+There are no GitHub Actions workflows in this repository — GitHub Pages builds
+and deploys the site on its own, with nothing to configure.
