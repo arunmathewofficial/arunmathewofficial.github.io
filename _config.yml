@@ -179,17 +179,21 @@ exclude:
   - CHANGELOG
   - Capfile
   - config
-  - Dockerfile
   - Gemfile
+  - Gemfile.lock
   - Gruntfile.js
   - gulpfile.js
   - LICENSE
   - local
   - log
+  - markdown_generator      # authoring tool: BibTeX/ORCID/TSV -> collection markdown
   - node_modules
   - package.json*
   - Rakefile
-  - README
+  - README.md
+  - talkmap.ipynb           # source notebook; run by the scrape_talks workflow
+  - talkmap.py
+  - talkmap_out.ipynb       # notebook output committed by the workflow
   - tmp
   - vendor
 keep_files:
