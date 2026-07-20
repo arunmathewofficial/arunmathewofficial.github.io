@@ -7,6 +7,15 @@ author_profile: true
 
 {% include base_path %}
 
+<figure>
+  <img src="{{ base_path }}/images/teaching-hero.png"
+       alt="Arun Mathew teaching the hydrogen atom in a Quantum Mechanics II class at a chalkboard"
+       loading="eager"
+       fetchpriority="high"
+       style="width: 100%; height: auto; border-radius: 0.35rem;">
+  <figcaption>Teaching the hydrogen atom in a Quantum Mechanics II class.</figcaption>
+</figure>
+
 {% for post in site.teaching reversed %}
   {% include archive-single.html %}
 {% endfor %}
