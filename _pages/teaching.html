@@ -7,7 +7,25 @@ author_profile: true
 
 {% include base_path %}
 
-<figure>
+<style>
+  .teaching-photo {
+    float: right;
+    width: 42%;
+    max-width: 360px;
+    margin: 0 0 1.25rem 2rem;
+  }
+
+  @media (max-width: 600px) {
+    .teaching-photo {
+      float: none;
+      width: 100%;
+      max-width: none;
+      margin: 0 0 1.25rem;
+    }
+  }
+</style>
+
+<figure class="teaching-photo">
   <img src="{{ base_path }}/images/teaching-hero.png"
        alt="Arun Mathew teaching the hydrogen atom in a Quantum Mechanics II class at a chalkboard"
        loading="eager"
