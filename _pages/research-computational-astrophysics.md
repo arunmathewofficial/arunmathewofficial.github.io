@@ -57,7 +57,7 @@ My computational work includes:
 * **Synthetic observations** — emission maps, line luminosities, and multi-wavelength spectra for direct comparison with observations.
 * **High-performance computing** — hybrid MPI/OpenMP simulations on national and European supercomputing facilities.
 
-I am the lead developer of **[NEMO](https://arxiv.org/abs/2409.18904)**, a multi-ion non-equilibrium ionisation solver integrated into the [PION](https://github.com/jmackey-astro/PION) radiation-MHD code. I also developed **[NebulaPy](https://github.com/arunmathewofficial/NebulaPy)**, a Python package for generating synthetic emission maps, line luminosities, and spectra using atomic data from [ChiantiPy](https://github.com/chianti-atomic/ChiantiPy).
+The numerical tools developed through this research are described in the dedicated **[Software section](/software/)**.
 
 <div style="clear: both;"></div>
 

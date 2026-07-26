@@ -7,12 +7,21 @@ redirect_from:
   - /about.html
 ---
 
-I am a theoretical and computational astrophysicist with over ten years of research experience spanning non-equilibrium plasma astrophysics, radiation–magnetohydrodynamics (MHD), general relativity, cosmology, and higher-order gravity.
+I am a **theoretical and computational astrophysicist** interested in how fundamental physics shapes the structure, evolution, and observable signatures of the Universe.
 
-My work models ionised plasmas in stellar and high-energy astrophysical environments, with a focus on connecting fundamental microphysics to observable phenomena. Alongside this, I study extended gravity in compact objects and early-Universe physics, including inflation and reheating.
+My research combines analytical theory, numerical modelling, and high-performance computing across three connected areas:
 
-I am the developer of [NEMO](https://arxiv.org/abs/2409.18904), a multi-ion non-equilibrium plasma solver, and [NebulaPy](https://github.com/arunmathewofficial/NebulaPy), a non-equilibrium spectral synthesis package built on ChiantiPy and NebPy. Together they enable self-consistent simulations and predictive modelling of multi-wavelength emission from radio to X-rays. I have authored more than 13 refereed publications, eight as first author, with an h-index of 5.
+* **[Computational astrophysics](/research/computational-astrophysics/)** — non-equilibrium plasma physics, radiation–magnetohydrodynamics, stellar winds, bow shocks, and synthetic multi-wavelength observations.
+* **[Compact objects in extended gravity](/research/compact-objects-extended-gravity/)** — the structure and stability of white dwarfs, neutron stars, and quark stars under extreme physical conditions.
+* **[Dark matter, dark energy and cosmology](/research/dark-matter-dark-energy-cosmology/)** — inflation, primordial reheating, scalar fields, and modified theories of gravity.
 
-I also bring over four years of teaching and mentoring experience across senior secondary, undergraduate, and postgraduate levels, delivering lectures, tutorials, and laboratory sessions in physics and computational methods. I have supervised research projects at undergraduate, master's, and PhD levels, guiding students towards strong analytical skills, rigorous scientific reasoning, and effective communication in an inclusive and supportive environment.
+## Teaching and mentoring
 
-Find my work on [Google Scholar]({{ site.author.googlescholar }}), [ORCID]({{ site.author.orcid }}), and [GitHub](https://github.com/{{ site.author.github }}).
+I teach physics and computational methods across undergraduate and postgraduate levels. My approach emphasises physical intuition, analytical reasoning, reproducible computation, and clear scientific communication. I have also mentored research projects at undergraduate, master’s, and PhD levels.
+
+[Explore my research](/research/){: .btn .btn--primary}
+[Explore my software](/software/){: .btn}
+[View publications](/publications/){: .btn}
+[View my CV](/cv/){: .btn}
+
+You can also find my work on [Google Scholar]({{ site.author.googlescholar }}), [ORCID]({{ site.author.orcid }}), and [GitHub](https://github.com/{{ site.author.github }}).
