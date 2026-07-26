@@ -5,6 +5,56 @@ permalink: /talks/
 author_profile: true
 ---
 
-{% for post in site.talks reversed %}
-  {% include archive-single-talk.html %}
-{% endfor %}
+<style>
+  .talk-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: talk;
+  }
+
+  .talk-entry {
+    position: relative;
+    margin-bottom: 1.15rem;
+    padding: 0 0 1.15rem 2.5rem;
+    border-bottom: 1px solid var(--global-border-color);
+    counter-increment: talk;
+  }
+
+  .talk-entry::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 1.8rem;
+    color: var(--global-text-color-light);
+    font-weight: 600;
+    text-align: right;
+    content: counter(talk) ".";
+  }
+
+  .talk-entry__title {
+    margin: 0 0 0.4rem;
+    font-family: inherit;
+    font-size: 1.02em;
+    font-weight: 600;
+    line-height: 1.45;
+  }
+
+  .talk-entry__details {
+    margin: 0;
+    font-size: 0.88em;
+    line-height: 1.55;
+  }
+</style>
+
+<ol class="talk-list">
+  {% for post in site.talks reversed %}
+    <li class="talk-entry">
+      <h2 class="talk-entry__title">{{ post.title }}</h2>
+      <p class="talk-entry__details">
+        <strong>Presentation details:</strong>
+        {{ post.type }}, <i>{{ post.venue }}</i>, {{ post.location }}, {{ post.date | date: "%d %B %Y" }}.
+      </p>
+    </li>
+  {% endfor %}
+</ol>
