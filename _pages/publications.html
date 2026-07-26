@@ -11,26 +11,47 @@ author_profile: true
 
 {% include base_path %}
 
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
+<style>
+  .publication-bibliography {
+    counter-reset: publication;
+  }
+
+  .publication-bibliography .list__item {
+    position: relative;
+    padding-left: 2.5rem;
+    counter-increment: publication;
+  }
+
+  .publication-bibliography .list__item::before {
+    position: absolute;
+    top: 1.05rem;
+    left: 0;
+    min-width: 1.8rem;
+    color: var(--global-text-color-light);
+    font-weight: 600;
+    text-align: right;
+    content: counter(publication) ".";
+  }
+</style>
+
+<div class="publication-bibliography">
+  {% if site.publication_category %}
+    {% for category in site.publication_category %}
+      {% assign title_shown = false %}
+      {% for post in site.publications reversed %}
+        {% if post.category != category[0] %}
+          {% continue %}
+        {% endif %}
+        {% unless title_shown %}
+          <h2>{{ category[1].title }}</h2><hr />
+          {% assign title_shown = true %}
+        {% endunless %}
+        {% include archive-single.html %}
+      {% endfor %}
+    {% endfor %}
+  {% else %}
     {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
       {% include archive-single.html %}
     {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endif %}
-
-
-
+  {% endif %}
+</div>
