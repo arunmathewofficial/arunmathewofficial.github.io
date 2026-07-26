@@ -8,7 +8,7 @@ date: 2011-09-01
 location: "Thiruvalla, Kerala, India"
 ---
 
-Graduate-level teaching (unofficial), 2011–2012.
+Graduate-level teaching, 2011–2012.
 
 Courses taught
 ======
