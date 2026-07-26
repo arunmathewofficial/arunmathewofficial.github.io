@@ -7,57 +7,48 @@ author_profile: true
 
 {% include base_path %}
 
-My research sits at the meeting point of plasma microphysics and observable astrophysics: building the numerical tools that predict what ionised plasmas actually look like across the electromagnetic spectrum, and applying them to stellar winds, shocks, and nebulae. A second strand concerns extended theories of gravity and their consequences for compact objects and the early Universe.
+My research spans computational astrophysics, compact objects in extended theories of gravity, and cosmology. I combine analytical methods, numerical modelling, and high-performance computing to connect fundamental physics with astrophysical observations.
 
-Research interests
+Computational Astrophysics
 ======
+
+I study the dynamics, ionisation, and radiation of astrophysical plasmas using numerical simulations. My work focuses on stellar-wind bow shocks, colliding-wind binaries, Wolf–Rayet nebulae, and other shocked or photoionised environments. A central goal is to connect plasma microphysics with observable emission across the electromagnetic spectrum, from radio wavelengths to X-rays.
+
+My computational work includes:
 
 * **Non-equilibrium plasma astrophysics** — multi-ion chemical kinetics and non-equilibrium ionisation in shocked and photoionised plasmas.
-* **Radiation–magnetohydrodynamics** — modelling stellar-wind bow shocks, colliding-wind binaries, and Wolf–Rayet nebulae.
-* **Synthetic observations** — predicting multi-wavelength emission, from radio through to X-rays, for direct comparison with observation.
-* **Compact objects in extended gravity** — white dwarfs and quark stars under generalized uncertainty principles, modified dispersion relations, and higher-order (Starobinsky-type) gravity.
-* **Cosmology** — inflation, primordial reheating, and scalaron dynamics in f(R) gravity.
+* **Radiation–magnetohydrodynamics** — large-scale simulations of stellar winds, shocks, and circumstellar nebulae.
+* **Synthetic observations** — emission maps, line luminosities, and multi-wavelength spectra for direct comparison with observations.
+* **High-performance computing** — hybrid MPI/OpenMP simulations on national and European supercomputing facilities.
 
-Code design and development
+I am the lead developer of **[NEMO](https://arxiv.org/abs/2409.18904)**, a multi-ion non-equilibrium ionisation solver integrated into the [PION](https://github.com/jmackey-astro/PION) radiation-MHD code. I also developed **[NebulaPy](https://github.com/arunmathewofficial/NebulaPy)**, a Python package for generating synthetic emission maps, line luminosities, and spectra using atomic data from [ChiantiPy](https://github.com/chianti-atomic/ChiantiPy).
+
+Compact Objects in Extended Gravity
 ======
 
-* **[NEMO](https://arxiv.org/abs/2409.18904)** — Lead developer of a multi-ion, non-equilibrium ionisation solver, integrated into the [PION](https://github.com/jmackey-astro/PION) radiation-MHD code.
-* **[NebulaPy](https://github.com/arunmathewofficial/NebulaPy)** — Designed and developed a Python pre/post-processing tool generating synthetic emission maps and line luminosities from the [Chianti](https://github.com/chianti-atomic/ChiantiPy) atomic database.
-* **[Gravity-Matter GR Code](https://github.com/arunmathewofficial/QuarkStar-fRT-Gravity)** — An iterative solver for quark star structure in a perturbative f(R,T) gravity-matter model.
-* **[Dynamical Instability Code](https://zenodo.org/records/4625488)** — Stellar structure and dynamical instability analysis of white dwarfs with a generalized uncertainty principle equation of state.
+I investigate how extensions of general relativity and modifications of quantum physics affect the structure and stability of compact stars. This work explores white dwarfs, neutron stars, and quark stars as laboratories for testing fundamental physics under extreme densities and gravitational fields.
 
-High-performance computing
+My research in this area includes:
+
+* White-dwarf structure and stability in general relativity.
+* Generalized uncertainty principles and modified dispersion relations.
+* Neutron stars with deconfined quark-matter cores.
+* Quark stars in higher-order and gravity–matter coupling theories.
+* Starobinsky-type gravity and scalar-tensor models.
+
+I developed the **[Gravity–Matter GR Code](https://github.com/arunmathewofficial/QuarkStar-fRT-Gravity)** for calculating quark-star structure in a perturbative f(R,T) gravity model, as well as a **[dynamical-instability code](https://zenodo.org/records/4625488)** for white dwarfs with generalized-uncertainty-principle equations of state.
+
+Dark Matter, Dark Energy and Cosmology
 ======
 
-* **[Kay](https://www.ichec.ie/about/infrastructure/kay)** at [ICHEC](https://www.ichec.ie/) — 336-node cluster, 2×20 cores per node. Allocation of 1,000,000 CPU core-hours over one year, investigating X-ray emission from interstellar bow shocks. Hybrid MPI/OpenMP parallelisation with SLURM job scheduling.
-* **[Meluxina](https://www.luxprovide.lu/meluxina/)** at [LuxProvide](https://www.luxprovide.lu/) — 2 sockets per node, 64 cores per socket, 2 CPUs per core. Allocation of 500,000 CPU core-hours over one year, investigating wind-blown bow shocks with NEMO.
+My cosmology research examines the physics of the early and late Universe, with particular emphasis on models that extend general relativity. I use analytical and numerical approaches to study how additional fields and modified gravitational dynamics influence cosmic evolution.
 
-Research mentoring
-======
+Topics of interest include:
 
-**PhD projects**, Indian Institute of Technology Guwahati (2020)
-
-* *Maximal mass of the neutron star with deconfined quark-gluon plasma core*
-* *Reheating in scalar-tensor model with non-minimal coupling to curvature and non-minimal kinetic coupling of the scalar field to the Einstein tensor*
-* *Neutron star in f(R,T) gravity with gravity-matter coupling*
-
-**Master's projects**, Indian Institute of Technology Guwahati
-
-* *Analysis of narrow and broad resonance regimes in the primordial reheating phase of the Universe* — April 2021
-* *Scalar-tensor gravity and white dwarfs in the Jordan frame* — April 2019
-* *Stability of compact stars with the Harrison-Wheeler equation of state in general relativistic and Newtonian gravity* — April 2018
-* *Stability of white dwarfs in general relativity and Newtonian gravity* — April 2018
-
-**B.Tech. projects**, Indian Institute of Technology Guwahati (May 2020)
-
-* *Analysis of the rotation curve of the ESO138-G014 galaxy in the framework of modified Newtonian dynamics*
-* *Magnetic field of neutron stars*
-
-Other previous projects
-======
-
-* Expertise in f(R, φ) gravity.
-* Surveyed dark matter evidence at various scales.
-* Explored scalar field dark matter in scalar-tensor gravity.
-* Verified cold boson dark matter halo formation.
-* Investigated spin waves in magnetic lattices.
+* Inflation and primordial reheating.
+* Scalaron dynamics in f(R) gravity.
+* Scalar-tensor theories with non-minimal curvature and kinetic couplings.
+* Dark-energy models and the late-time acceleration of the Universe.
+* Observational evidence for dark matter across astrophysical scales.
+* Scalar-field and bosonic dark-matter models.
+* Galactic rotation curves and modified-gravity alternatives to dark matter.
