@@ -16,21 +16,41 @@ author_profile: true
     counter-reset: publication;
   }
 
-  .publication-bibliography .list__item {
+  .publication-entry {
     position: relative;
-    padding-left: 2.5rem;
+    margin-bottom: 1.15rem;
+    padding: 0 0 1.15rem 2.5rem;
+    border-bottom: 1px solid var(--global-border-color);
     counter-increment: publication;
   }
 
-  .publication-bibliography .list__item::before {
+  .publication-entry::before {
     position: absolute;
-    top: 1.05rem;
+    top: 0;
     left: 0;
     min-width: 1.8rem;
     color: var(--global-text-color-light);
     font-weight: 600;
     text-align: right;
     content: counter(publication) ".";
+  }
+
+  .publication-entry__title {
+    margin: 0 0 0.4rem;
+    font-family: inherit;
+    font-size: 1.02em;
+    font-weight: 600;
+    line-height: 1.45;
+  }
+
+  .publication-entry__citation {
+    margin: 0;
+    font-size: 0.88em;
+    line-height: 1.55;
+  }
+
+  .publication-entry__citation a {
+    text-decoration: underline;
   }
 </style>
 
@@ -46,12 +66,34 @@ author_profile: true
           <h2>{{ category[1].title }}</h2><hr />
           {% assign title_shown = true %}
         {% endunless %}
-        {% include archive-single.html %}
+        <article class="publication-entry">
+          <h3 class="publication-entry__title">{{ post.title }}</h3>
+          <p class="publication-entry__citation">
+            <strong>Recommended citation:</strong>
+            {% if post.paperurl and post.citation contains '<i>' %}
+              {% assign citation_parts = post.citation | split: '<i>' %}
+              {{ citation_parts[0] }}<a href="{{ post.paperurl }}"><i>{{ citation_parts[1] }}</a>
+            {% else %}
+              {{ post.citation }}
+            {% endif %}
+          </p>
+        </article>
       {% endfor %}
     {% endfor %}
   {% else %}
     {% for post in site.publications reversed %}
-      {% include archive-single.html %}
+      <article class="publication-entry">
+        <h3 class="publication-entry__title">{{ post.title }}</h3>
+        <p class="publication-entry__citation">
+          <strong>Recommended citation:</strong>
+          {% if post.paperurl and post.citation contains '<i>' %}
+            {% assign citation_parts = post.citation | split: '<i>' %}
+            {{ citation_parts[0] }}<a href="{{ post.paperurl }}"><i>{{ citation_parts[1] }}</a>
+          {% else %}
+            {{ post.citation }}
+          {% endif %}
+        </p>
+      </article>
     {% endfor %}
   {% endif %}
 </div>
