@@ -39,6 +39,7 @@ author:
   inspire-hep      : # URL
   impactstory      : # URL
   orcid            : "https://orcid.org/0000-0001-9896-4243"
+  webofscience      : "https://www.webofscience.com/wos/author/record/AAZ-9419-2021"
   semantic         : # URL
   ssrn             : # URL
   pubmed           : # URL
@@ -159,6 +160,7 @@ social:
   links:
     - "https://scholar.google.com/citations?user=i8F73fwAAAAJ&hl=en"
     - "https://orcid.org/0000-0001-9896-4243"
+    - "https://www.webofscience.com/wos/author/record/AAZ-9419-2021"
     - "https://github.com/arunmathewofficial"
 
 
