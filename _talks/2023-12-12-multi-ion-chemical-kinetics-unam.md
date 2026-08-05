@@ -6,6 +6,7 @@ permalink: /talks/2023-12-12-multi-ion-chemical-kinetics-unam
 venue: "Instituto de Astronomía, UNAM"
 date: 2023-12-12
 location: "Mexico City, Mexico"
+slides: /presentations/INAM_2023.pdf
 ---
 
 Invited talk to an audience of astrophysicists and astronomers.
