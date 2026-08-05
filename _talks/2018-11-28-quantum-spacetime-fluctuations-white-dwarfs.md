@@ -6,6 +6,7 @@ permalink: /talks/2018-11-28-quantum-spacetime-fluctuations-white-dwarfs
 venue: "Indian Institute of Technology Guwahati"
 date: 2018-11-28
 location: "Guwahati, India"
+slides: /presentations/QST_WD.pdf
 ---
 
 Seminar for undergraduate and master's students.
