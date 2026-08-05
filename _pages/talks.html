@@ -47,6 +47,9 @@ author_profile: true
   }
 
   .talk-entry__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
     margin: 0.55rem 0 0;
   }
 
@@ -67,6 +70,7 @@ author_profile: true
       </p>
       {% if post.powerpoint %}
         <p class="talk-entry__links">
+          <a class="btn btn--primary" href="https://view.officeapps.live.com/op/view.aspx?src={{ post.powerpoint | absolute_url | url_encode }}" target="_blank" rel="noopener">View Slideshow</a>
           <a class="btn btn--primary" href="{{ post.powerpoint | relative_url }}" download>Download PowerPoint</a>
         </p>
       {% endif %}
