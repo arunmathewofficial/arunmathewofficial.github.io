@@ -66,7 +66,8 @@ author_profile: true
       <h2 class="talk-entry__title">{{ post.title }}</h2>
       <p class="talk-entry__details">
         <strong>Presentation details:</strong>
-        {{ post.type }}, <i>{{ post.venue }}</i>, {{ post.location }}, {{ post.date | date: "%d %B %Y" }}.
+        {{ post.type }}, <i>{{ post.venue }}</i>, {{ post.location }},
+        {% if post.year_only %}{{ post.date | date: "%Y" }}{% else %}{{ post.date | date: "%d %B %Y" }}{% endif %}.
       </p>
       {% if post.slides %}
         <p class="talk-entry__links">
