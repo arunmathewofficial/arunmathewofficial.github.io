@@ -68,10 +68,10 @@ author_profile: true
         <strong>Presentation details:</strong>
         {{ post.type }}, <i>{{ post.venue }}</i>, {{ post.location }}, {{ post.date | date: "%d %B %Y" }}.
       </p>
-      {% if post.powerpoint %}
+      {% if post.slides %}
         <p class="talk-entry__links">
-          <a class="btn btn--primary" href="https://view.officeapps.live.com/op/view.aspx?src={{ post.powerpoint | absolute_url | url_encode }}" target="_blank" rel="noopener">View Slideshow</a>
-          <a class="btn btn--primary" href="{{ post.powerpoint | relative_url }}" download>Download PowerPoint</a>
+          <a class="btn btn--primary" href="{{ post.slides | relative_url }}" target="_blank" rel="noopener">View Slides</a>
+          <a class="btn btn--primary" href="{{ post.slides | relative_url }}" download>Download PDF</a>
         </p>
       {% endif %}
     </li>
