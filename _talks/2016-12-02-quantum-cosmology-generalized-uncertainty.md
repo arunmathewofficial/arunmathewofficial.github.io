@@ -6,6 +6,7 @@ permalink: /talks/2016-12-02-quantum-cosmology-generalized-uncertainty
 venue: "Indian Institute of Technology Guwahati"
 date: 2016-12-02
 location: "Guwahati, India"
+slides: /presentations/QCGUP2016.pdf
 ---
 
 Seminar for undergraduate and master's students.
